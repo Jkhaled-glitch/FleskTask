@@ -48,7 +48,8 @@ router.get('/:id', async (req, res) => {
                 }
                 myToken = jwt.sign(payload,"1234")
 
-                res.status(200).send({token : myToken,accountType: user.accountType}) 
+                res.status(200).send({token : myToken
+                    ,accountType: user.accountType}) 
             }
         }
     }catch(err){
@@ -65,6 +66,7 @@ router.get('/:id', async (req, res) => {
         }
 
         const hashedPassword = await bcrypt.hash(data.password, 10);
+        
         const user = new User({
            
             userName :data.userName,

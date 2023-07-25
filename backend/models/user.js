@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+
+
 const User = mongoose.model('users',{
     email :{
         type: String
@@ -10,7 +12,8 @@ const User = mongoose.model('users',{
         type: String
     },
     accountType :{
-        type: String
+        type: String,
+         default: 'user'
     }
     
 })
